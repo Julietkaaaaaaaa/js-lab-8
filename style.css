@@ -1,4 +1,4 @@
-* {    
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +9,7 @@ body {
     background-color: #111111;
     color: white;
 }
+
 
 header {
     background-color: #1b1b1b;
@@ -25,22 +26,11 @@ header {
     font-weight: bold;
 }
 
+/* MENU */
+
 nav {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    background-color: #222222;
-    flex-direction: column;
-    width: 220px;
-    padding: 20px;
-    border-radius: 10px;
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: 0.4s;
-
-    z-index: 1001;
+    display: flex;
+    gap: 25px;
 }
 
 nav a {
@@ -54,6 +44,8 @@ nav a:hover {
     color: #00bfff;
 }
 
+/* BURGER */
+
 .burger {
     display: none;
     background: none;
@@ -63,12 +55,15 @@ nav a:hover {
     cursor: pointer;
 }
 
+/* CAROUSEL */
+
 .carousel {
     width: 90%;
     margin: 40px auto;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
+    z-index: 1;
 }
 
 .slides {
@@ -84,6 +79,8 @@ nav a:hover {
     width: 100%;
     display: block;
 }
+
+/* ARROWS */
 
 .arrow {
     position: absolute;
@@ -105,6 +102,8 @@ nav a:hover {
     right: 10px;
 }
 
+/* DOTS */
+
 .dots {
     display: flex;
     justify-content: center;
@@ -125,6 +124,8 @@ nav a:hover {
 .dot.active {
     background-color: #00bfff;
 }
+
+/* IMAGES */
 
 .large-images,
 .medium-images {
@@ -151,10 +152,7 @@ nav a:hover {
 .image-container img:hover {
     transform: scale(1.05);
 }
-.carousel {
-    position: relative;
-    z-index: 1;
-}
+
 
 @media (max-width: 767px) {
 
@@ -163,19 +161,27 @@ nav a:hover {
     }
 
     nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
         position: absolute;
         top: 80px;
         right: 20px;
+
         background-color: #222222;
-        flex-direction: column;
+
         width: 220px;
         padding: 20px;
         border-radius: 10px;
 
         opacity: 0;
         visibility: hidden;
+
         transform: translateY(-20px);
         transition: 0.4s;
+
+        z-index: 1001;
     }
 
     nav.show {
@@ -188,6 +194,7 @@ nav a:hover {
         display: none;
     }
 }
+
 
 @media (min-width: 768px) {
 
