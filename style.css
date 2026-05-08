@@ -1,66 +1,55 @@
-body {
-    background-color: #09090b;
-    margin: 0;
+* {
+.image-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.carousel {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 1px solid #27272a;
+.image-container img {
+    border-radius: 10px;
+    transition: 0.4s;
 }
 
-.carousel-track {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    transition: transform 0.5s ease-in-out; 
+.image-container img:hover {
+    transform: scale(1.05);
 }
 
-.slide {
-    min-width: 100%;
-}
-
-.slide img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-/* Кнопки навігації */
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.nav-btn:hover { background: #8b5cf6; }
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* Якщо Large (>= 768px) */
-@media (min-width: 768px) {
-    .only-medium { display: none; }
-    .only-large { display: block; }
-}
-
-/* Якщо Medium (< 768px) */
 @media (max-width: 767px) {
-    .only-large { display: none; }
-    .only-medium { display: block; }
+
+    .burger {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: #222222;
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        border-radius: 10px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: 0.4s;
+    }
+
+    nav.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .large-images {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .medium-images {
+        display: none;
+    }
 }
