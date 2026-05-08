@@ -28,6 +28,7 @@ header {
 nav {
     display: flex;
     gap: 25px;
+    z-index: 3;
 }
 
 nav a {
