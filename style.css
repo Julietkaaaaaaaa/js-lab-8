@@ -1,55 +1,56 @@
-* {
-.image-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+const burgerBtn = document.getElementById("burgerBtn");
+const navMenu = document.getElementById("navMenu");
+
+burgerBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+});
+
+const slides = document.getElementById("slides");
+const slide = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentIndex = 0;
+
+function updateCarousel() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    dots[currentIndex].classList.add("active");
 }
 
-.image-container img {
-    border-radius: 10px;
-    transition: 0.4s;
+function nextSlide() {
+    currentIndex++;
+
+    if (currentIndex >= slide.length) {
+        currentIndex = 0;
+    }
+
+    updateCarousel();
 }
 
-.image-container img:hover {
-    transform: scale(1.05);
+function prevSlide() {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = slide.length - 1;
+    }
+
+    updateCarousel();
 }
 
-@media (max-width: 767px) {
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
 
-    .burger {
-        display: block;
-    }
+setInterval(nextSlide, 3000);
 
-    nav {
-        position: absolute;
-        top: 80px;
-        right: 20px;
-        background-color: #222222;
-        flex-direction: column;
-        width: 220px;
-        padding: 20px;
-        border-radius: 10px;
-
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
-        transition: 0.4s;
-    }
-
-    nav.show {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .large-images {
-        display: none;
-    }
-}
-
-@media (min-width: 768px) {
-
-    .medium-images {
-        display: none;
-    }
-}
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        currentIndex = index;
+        updateCarousel();
+    });
+});
