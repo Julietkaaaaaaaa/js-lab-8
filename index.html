@@ -2,40 +2,40 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Lab 8 - Visual Effects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="carousel-container">
+    <div class="carousel">
         <div class="carousel-track-container">
             <ul class="carousel-track">
-                <li class="carousel-slide current-slide">
-                    <img src="https://placehold.co/1200x500/1a1a1a/8b5cf6?text=Global+Slide+1" alt="1">
+                <li class="slide active-slide">
+                    <img src="https://placehold.co/800x400/18181b/ffffff?text=Універсальний+1" alt="U1">
                 </li>
-                <li class="carousel-slide">
-                    <img src="https://placehold.co/1200x500/1a1a1a/8b5cf6?text=Global+Slide+2" alt="2">
+                <li class="slide">
+                    <img src="https://placehold.co/800x400/18181b/ffffff?text=Універсальний+2" alt="U2">
                 </li>
-                
-                <li class="carousel-slide only-medium">
-                    <img src="https://placehold.co/1200x500/2d1b4e/a78bfa?text=MEDIUM+ONLY+1" alt="M1">
+
+                <li class="slide only-large">
+                    <img src="https://placehold.co/800x400/27272a/38bdf8?text=LARGE+ONLY+1" alt="L1">
                 </li>
-                
-                <li class="carousel-slide only-large">
-                    <img src="https://placehold.co/1200x500/1e293b/38bdf8?text=LARGE+ONLY+1" alt="L1">
+                <li class="slide only-large">
+                    <img src="https://placehold.co/800x400/27272a/38bdf8?text=LARGE+ONLY+2" alt="L2">
+                </li>
+
+                <li class="slide only-medium">
+                    <img src="https://placehold.co/800x400/3f3f46/f43f5e?text=MEDIUM+ONLY+1" alt="M1">
+                </li>
+                <li class="slide only-medium">
+                    <img src="https://placehold.co/800x400/3f3f46/f43f5e?text=MEDIUM+ONLY+2" alt="M2">
                 </li>
             </ul>
         </div>
 
-        <button class="carousel-button button-left"> &lt; </button>
-        <button class="carousel-button button-right"> &gt; </button>
-
-        <div class="carousel-nav">
-            <button class="indicator current-indicator"></button>
-            <button class="indicator"></button>
-            <button class="indicator"></button>
-            <button class="indicator"></button>
-        </div>
+        <button class="nav-btn prev">❮</button>
+        <button class="nav-btn next">❯</button>
     </div>
 
     <script src="script.js"></script>
