@@ -1,0 +1,66 @@
+body {
+    background-color: #09090b;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #27272a;
+}
+
+.carousel-track {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Кнопки навігації */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.nav-btn:hover { background: #8b5cf6; }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Якщо Large (>= 768px) */
+@media (min-width: 768px) {
+    .only-medium { display: none; }
+    .only-large { display: block; }
+}
+
+/* Якщо Medium (< 768px) */
+@media (max-width: 767px) {
+    .only-large { display: none; }
+    .only-medium { display: block; }
+}
