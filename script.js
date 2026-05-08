@@ -1,35 +1,56 @@
-const track = document.querySelector('.carousel-track');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
+const burgerBtn = document.getElementById("burgerBtn");
+const navMenu = document.getElementById("navMenu");
+
+burgerBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+});
+
+const slides = document.getElementById("slides");
+const slide = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
 let currentIndex = 0;
 
-function updateSlider() {
-    //  (display != none)
-    const allSlides = Array.from(document.querySelectorAll('.slide'));
-    const visibleSlides = allSlides.filter(slide => 
-        window.getComputedStyle(slide).display !== 'none'
-    );
+function updateCarousel() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    // Перевірка меж
-    if (currentIndex >= visibleSlides.length) currentIndex = 0;
-    if (currentIndex < 0) currentIndex = visibleSlides.length - 1;
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    });
 
-    const amountToMove = currentIndex * 100;
-    track.style.transform = `translateX(-${amountToMove}%)`;
+    dots[currentIndex].classList.add("active");
 }
 
-nextBtn.addEventListener('click', () => {
+function nextSlide() {
     currentIndex++;
-    updateSlider();
-});
 
-prevBtn.addEventListener('click', () => {
+    if (currentIndex >= slide.length) {
+        currentIndex = 0;
+    }
+
+    updateCarousel();
+}
+
+function prevSlide() {
     currentIndex--;
-    updateSlider();
-});
 
-window.addEventListener('resize', () => {
-    currentIndex = 0;
-    updateSlider();
+    if (currentIndex < 0) {
+        currentIndex = slide.length - 1;
+    }
+
+    updateCarousel();
+}
+
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+setInterval(nextSlide, 3000);
+
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        currentIndex = index;
+        updateCarousel();
+    });
 });
