@@ -137,6 +137,9 @@ nav a:hover {
 .image-container img:hover {
     transform: scale(1.05);
 }
+.carousel {
+    z-index: 1;
+}
 
 @media (max-width: 767px) {
 
