@@ -1,43 +1,71 @@
 <!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 8</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-    <div class="carousel">
-        <div class="carousel-track-container">
-            <ul class="carousel-track">
-                <li class="slide active-slide">
-                    <img src="https://placehold.co/800x400/18181b/ffffff?text=Універсальний+1" alt="U1">
-                </li>
-                <li class="slide">
-                    <img src="https://placehold.co/800x400/18181b/ffffff?text=Універсальний+2" alt="U2">
-                </li>
+    <button class="burger" id="burgerBtn">
+        ☰
+    </button>
 
-                <li class="slide only-large">
-                    <img src="https://placehold.co/800x400/27272a/38bdf8?text=LARGE+ONLY+1" alt="L1">
-                </li>
-                <li class="slide only-large">
-                    <img src="https://placehold.co/800x400/27272a/38bdf8?text=LARGE+ONLY+2" alt="L2">
-                </li>
+    <nav id="navMenu">
+        <a href="#">Головна</a>
+        <a href="#">Галерея</a>
+        <a href="#">Послуги</a>
+        <a href="#">Контакти</a>
+    </nav>
+</header>
 
-                <li class="slide only-medium">
-                    <img src="https://placehold.co/800x400/3f3f46/f43f5e?text=MEDIUM+ONLY+1" alt="M1">
-                </li>
-                <li class="slide only-medium">
-                    <img src="https://placehold.co/800x400/3f3f46/f43f5e?text=MEDIUM+ONLY+2" alt="M2">
-                </li>
-            </ul>
+<section class="carousel">
+
+    <div class="slides" id="slides">
+
+        <div class="slide active">
+            <img src="https://placehold.co/1200x500/1e1e1e/ffffff?text=Slide+1" alt="slide1">
         </div>
 
-        <button class="nav-btn prev">❮</button>
-        <button class="nav-btn next">❯</button>
+        <div class="slide">
+            <img src="https://placehold.co/1200x500/2b2b2b/ffffff?text=Slide+2" alt="slide2">
+        </div>
+
+        <div class="slide">
+            <img src="https://placehold.co/1200x500/3a3a3a/ffffff?text=Slide+3" alt="slide3">
+        </div>
+
+        <div class="slide">
+            <img src="https://placehold.co/1200x500/444444/ffffff?text=Slide+4" alt="slide4">
+        </div>
+
     </div>
 
-    <script src="script.js"></script>
+    <button class="arrow left" id="prevBtn">❮</button>
+    <button class="arrow right" id="nextBtn">❯</button>
+
+    <div class="dots" id="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+</section>
+
+<section class="large-images">
+    <h2>Large Devices</h2>
+
+    <div class="image-container">
+        <img src="https://placehold.co/350x220/202020/ffffff?text=Desktop+1" alt="desktop1">
+        <img src="https://placehold.co/350x220/2c2c2c/ffffff?text=Desktop+2" alt="desktop2">
+        <img src="https://placehold.co/350x220/383838/ffffff?text=Desktop+3" alt="desktop3">
+    </div>
+</section>
+
+<section class="medium-images">
+    <h2>Medium Devices</h2>
+
+    <div class="image-container">
+        <img src="https://placehold.co/300x200/222222/ffffff?text=Mobile+1" alt="mobile1">
+        <img src="https://placehold.co/300x200/333333/ffffff?text=Mobile+2" alt="mobile2">
+        <img src="https://placehold.co/300x200/444444/ffffff?text=Mobile+3" alt="mobile3">
+    </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
