@@ -17,6 +17,7 @@ header {
     align-items: center;
     padding: 20px;
     position: relative;
+    z-index: 2;
 }
 
 .logo {
