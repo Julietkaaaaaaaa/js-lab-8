@@ -1,8 +1,17 @@
 const burgerBtn = document.getElementById("burgerBtn");
 const navMenu = document.getElementById("navMenu");
 
+let timer = setInterval(nextSlide, 3000);
+
+function resetTimer() {
+    clearInterval(timer); 
+    timer = setInterval(nextSlide, 3000); 
+}
+
+
 burgerBtn.addEventListener("click", () => {
     navMenu.classList.toggle("show");
+    resetTimer();
 });
 
 const slides = document.getElementById("slides");
