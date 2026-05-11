@@ -16,7 +16,7 @@ const nextBtn = document.getElementById("nextBtn");
 let currentIndex = 0;
 
 //Управління таймером
-let timer = setInterval(nextSlide, 3000); // Створюємо таймер ОДИН раз
+let timer = setInterval(nextSlide, 3000);
 
 function resetTimer() {
     clearInterval(timer); 
